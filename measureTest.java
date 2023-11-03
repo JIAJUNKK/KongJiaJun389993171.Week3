@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Iterator;
 
 public class measureTest implements CollectionTest{
 	private ArrayList <Person> personArrayList;
@@ -38,7 +37,7 @@ public class measureTest implements CollectionTest{
 	}
 	
 	
-	//  java PerformanceVisualizer measureTest 100 1000 10 1000
+	// java PerformanceVisualizer measureTest 100 1000 10 1000
 	
 	
 	private void testArrayList(CollectionTest.TestType test) {
@@ -66,7 +65,6 @@ public class measureTest implements CollectionTest{
 			break;
 		}
 	}
-	
 	private void testLinkedList(CollectionTest.TestType test) {
 		switch(test) {
 		case ADD:
@@ -101,14 +99,16 @@ public class measureTest implements CollectionTest{
 			}
 			break;
 		case INDEX:
-			int currentIndex = 0;
-			Iterator<Map.Entry<String, Person>> iterator = personHashMap.entrySet().iterator();
-			while (iterator.hasNext()) {
+			int currentIndex = 0;	
+			for (Map.Entry<String, Person> entry : personHashMap.entrySet()) {
 				if (currentIndex == size / 2) {
+					Person personAtIndex = entry.getValue();
+				
 					break;
 				}
 				currentIndex++;
 			}
+			
 			break;
 		case SEARCH:
 			searchName = "Person" + size/2;
