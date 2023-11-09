@@ -1,12 +1,13 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.HashMap;
 
 public class measureTest implements CollectionTest{
 	private ArrayList <Person> personArrayList;
 	private LinkedList <Person> personLinkedList;
 	private HashMap <String, Person> personHashMap;
+	
 	private int size; 
 	private String searchName;
 	
@@ -103,7 +104,6 @@ public class measureTest implements CollectionTest{
 			for (Map.Entry<String, Person> entry : personHashMap.entrySet()) {
 				if (currentIndex == size / 2) {
 					Person personAtIndex = entry.getValue();
-				
 					break;
 				}
 				currentIndex++;
